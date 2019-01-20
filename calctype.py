@@ -1,10 +1,6 @@
 #-*-coding: utf-8-*-
 def calcType(a, b, res):
-	if a + b == res:
-		return "addition"
-	elif a - b == res or b - a == res:
-		return "subtraction"
-	elif a * b == res:
-		return "multiplication"
-	elif a / b == res or b / a == res:
-		return "division"
+	ans = {"addition": a+b,"subtraction":a-b,"multiplication":a*b,"division":a/b}
+	for op in ans:
+		if ans[op] == res:
+			return op
