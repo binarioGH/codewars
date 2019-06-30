@@ -1,14 +1,19 @@
 #-*-coding: utf-8-*-
-def detectnum(word):
-	count = 0
-	n = ""
-	for char in word:
-		if char.isaplha():
-			count += 1
-			n += char
-		else:
-			return (int(n), count)
-def decipher_this(text):
-	decipher_text = []
-	for word in text.slpit():
-		num, border = detectnum(word)
+def getFirstLetter(m):
+	letter = ""
+	index = 0
+	for c in m:
+		if not c.isalpha():
+			letter += c
+			index += 1
+			continue
+		break
+	return (chr(int(letter)), index)
+def decipher_this(msj):
+	decrypted = []
+	for word in msj.split():
+	    fl, i = getFirstLetter(word) #fl = first letter, i = index
+	    newword = word[i:]
+	    newword = newword[::-1]
+	    decrypted.append("{}{}".format(fl,newword))
+	return " ".join(decrypted)
