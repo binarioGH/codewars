@@ -46,3 +46,19 @@ def length(text):
 	for char in text:
 		counter += 1
 	return counter
+
+def find(text,char):
+	counter = 0
+	for c in text:
+		if c == char:
+			return counter
+		counter += 1 
+	return -1
+
+def isalpha(text):
+	text = text.lower()
+	abc = "abcdefghijklmnñopqrstuvwxyz"
+	for char in text:
+		if char not in abc:
+			return False
+	return True
