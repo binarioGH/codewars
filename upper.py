@@ -39,4 +39,10 @@ def title(text):
 		word = "".join(word)
 		text[windex] = word
 		windex += 1
-	return " ".join(text)
+	return " 	".join(text)
+
+def length(text):
+	counter = 0
+	for char in text:
+		counter += 1
+	return counter
