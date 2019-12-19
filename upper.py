@@ -62,3 +62,12 @@ def isalpha(text):
 		if char not in abc:
 			return False
 	return True
+
+def isdigit(number):
+	number = str(number)
+	for digit in number:
+		try:
+			digit = int(digit)
+		except:
+			return False
+	return True
