@@ -71,3 +71,8 @@ def isdigit(number):
 		except:
 			return False
 	return True
+
+def isSpecialChar(char):
+	if not isdigit(char) and not isalpha(char):
+		return True
+	return False
