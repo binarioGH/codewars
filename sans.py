@@ -1,5 +1,14 @@
 #-*-coding: utf-8-*-
 #cursed
+from os import system, listdir, environ
+from time import sleep	
+environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+from pygame import init, mixer
+init()
+system("cls")
+def soundLoop(file):
+    PlaySound(file, SND_LOOP + SND_ASYNC)
+
 sans = '''        ██████████████████
     ████░░░░░░░░░░░░░░░░░░████
   ██░░░░░░░░░░░░░░░░░░░░░░░░░░██
@@ -33,3 +42,27 @@ ultimate_sans = '''                               ██████████
                                  ██████████████'''
 
 list_sans = ['                               ██████████████████', '                           ████░░░░░░░░░░░░░░░░░░████', '                         ██░░░░░░░░░░░░░░░░░░░░░░░░░░██', '                         ██░░░░░░░░░░░░░░░░░░░░░░░░░░██', '                       ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██', '                       ██░░░░░░░░░░░░░░░░░░░░██████░░░░██', '                       ██░░░░░░░░░░░░░░░░░░░░██████░░░░██', '                       ██░░░░██████░░░░██░░░░██████░░░░██', '                         ██░░░░░░░░░░██████░░░░░░░░░░██', '                       ████░░██░░░░░░░░░░░░░░░░░░██░░████', '                       ██░░░░██████████████████████░░░░██', '                       ██░░░░░░██░░██░░██░░██░░██░░░░░░██', '                         ████░░░░██████████████░░░░████', '                             ████░░░░░░░░░░░░░░████', '                                 ██████████████']
+
+
+
+def main():
+    system("cls")
+    if "megalovania.mp3" in listdir():
+        mixer.music.load("megalovania.mp3")
+        mixer.music.play()
+        #print("UwU")
+    print("\n\n")
+    try:
+        for line in list_sans:
+          print(line)
+          sleep(0.2)
+        input("")
+    except KeyboardInterrupt:
+      pass
+
+
+
+
+
+if __name__ == '__main__':
+	main()
